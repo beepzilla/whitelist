@@ -40,7 +40,8 @@
                 let totalContribution = 0;
                 rows.forEach(row => {
                     const columns = row.split(',');
-                    const amount = parseFloat(columns[3]); // Assuming the amount is in the fourth column
+                    const amountString = columns[3].replace('$', ''); // Remove any dollar signs
+                    const amount = parseFloat(amountString); // Parse the amount as a number
                     if (!isNaN(amount)) {
                         totalContribution += amount;
                     }
